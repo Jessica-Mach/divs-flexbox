@@ -95,19 +95,58 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+/******** GRID *********/
 html {
   background-color: #FFFFFF;
   height: 100%;
+  width: 100%;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
   font-size: 1.25em;
   height: 100%;
+  /*padding: 1em;
+  display: flex;
+  justify-content: center;*/
 }
 
+header, footer {
+  height: 100px;
+  width: 96%; 
+}
+
+main {
+  height: 200px;
+  width: 96%;
+  background-color: #F15946;
+  padding: 0 2%;
+}
+
+main, footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  height: 100px;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  padding: 0 2%;
+}
+
+
+/********** WRAPPER **********/
 .wrapper {
   /*add display:flex and set justify-content to space-between*/
   font-weight: 700;
@@ -115,34 +154,80 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row wrap;
 }
+
+/*********** HEADER ************/
+header {
+  padding: 0 2%;
+}
+header h1{
+  font-size: 2em;
+}
+
+/*********** MAIN **************/
+main h3{
+  font-size: .8em;
+  padding: 1em 0 1em 1em;
+}
+
+main span{
+  font-family: 'Indie Flower', cursive;
+  color: #FFFFFF;
+  font-size: .88em;
+}
+
+/********** DIV STYLES *********/
+
 
 .div-1, .div-2, .div-3 {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #363636;
-  line-height: 1.5em;
-  font-size: 1.6em;
+  line-height: .9em;
+  font-size: 1em;
+  padding: 1em .5em;
   background-color: #FFFFFF;
-  height: 300px;
-  width: 30%;
+  height: 100px;
+  width: 96%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-left: 2%;
-  padding-right: 2%;
+  flex-flow: row wrap;
+  border-bottom: 3px solid #363636;
+  padding: 0 2%;
 }
 
-.div-2 {
-  border-right: 6px solid #363636;
-  border-left: 6px solid #363636;
-}
 
-span{
+
+div span{
   font-family: 'Indie Flower', cursive;
-  color: #C538E8; /*FA6143 or FF4919*/
+  color: #F15946; 
   font-size: 1.2em;
 }
+
+
+#s-media img{
+  height: 40%;
+  width: 40%;
+  color: #363636;
+}
+
+#s-media {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+  color: #363636;
+}
+.footr{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+
+
 
 
 
@@ -225,6 +310,57 @@ span{
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+@media (min-width: 768px){
+  
+  header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+  header h1{
+    font-size: 4em;
+  }
+  main h3{
+    font-size: 1.2em;
+    padding: 1em 0 1em 1em;
+  }
+  main span{
+    font-size: 1.2em;
+  }
+  .div-1, .div-2, .div-3 {
+  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
+    line-height: 1.5em;
+    font-size: 1.6em;
+    width: 27%;
+    height: 300px;
+    border-bottom: none;
+    padding: 0 2%;
+  }
+  .div-1{
+    border-right: 2px solid #363636;
+  }
+  /*.div-2{
+    border-left: 6px inset #363636;
+    border-right: 6px inset #363636;
+  }*/
+  .div-3{
+    border-left: 2px solid #363636;
+  }
+  #s-media img{
+    height: 50%;
+    width: 50%;
+    color: #363636;
+  }
+
+  footer div {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 2%;
+  }
+}
+
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
